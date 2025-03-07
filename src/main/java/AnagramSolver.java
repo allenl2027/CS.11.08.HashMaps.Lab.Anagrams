@@ -61,25 +61,9 @@ public class AnagramSolver {
     }
 
     public static String sortString(String s){
-        char[] arr = s.toCharArray();
-        int size = arr.length;
-        boolean swapped;
-
-        for(int j = 0; j< size-1; j++){
-            swapped = false;
-            for(int i = 0; i<size-1-j; i++) {
-                if (arr[i] > arr[i + 1]) {
-                    char temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
-                    swapped = true;
-                }
-            }
-            if(!swapped){
-                break;
-            }
-        }
-        return new String(arr);
+        char[] tempArr=s.toCharArray();
+        Arrays.sort(tempArr);
+        return new String(tempArr);
     }
     /**
      * Input: hashmap of lists of words that are anagrams.
